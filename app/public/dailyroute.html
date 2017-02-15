@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="daily">
+    <head>
+        <meta charset="utf-8">
+        <meta name="google-signin-client_id" content="296256466166-pdh58rh53nihcc5tfh184vmautajqsup.apps.googleusercontent.com">
+        <title> daily route </title>
+        <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+    </head>
+    <body>
+        <nav> 
+            <a id = "personalData" href="userdata.html" > <img id = "userPic" src="{{pic}}"> </a>
+            <a id = "dailyRouteChosen" href="dailyroute.html"> </a>
+            <a id = "weeklyRoute" href="route.html"> </a> 
+            <div class = "clear"> </div>
+        </nav>
+        <main ng-controller = "dailycontroller">
+            <section id ="dayHeadline">
+                <h1 id = "hDay"> מסלול יומי </h1>
+                <h3 id = "hDate"> {{date}} </h3>
+            </section>
+            <section id = "routeInfo"> 
+                <p id = "src"> <b> מוצא </b> <br> {{start}}</p>
+                <p id = "dest"> <b> סיום </b> <br> {{end}} </p>
+                <div class = "clear"> </div>
+                <img src = "images/sptept.png">
+                <p id = "totalKm"> סה"כ &nbsp;&nbsp;&nbsp;{{km}} ק"מ </p>
+            </section>
+            <section id = "sleep"> 
+                <hr class = "dailyHr"> </hr>
+                <h4> <b> מידע חיוני </b> </h4>
+                <p class = "sleepIcons"> <img class = "roundedIcon" src = "images/sleepicon1.png"> <br> {{end}} </p> 
+                <p class = "sleepIcons"> <img class = "roundedIcon" src = "images/family.jpg"> <br> משפחת {{familyName}} </p>
+                <p class = "sleepIcons"> <img class = "roundedIcon" src = "images/phoneicon.png"> <br> צור קשר </p>
+                <div class = "clear"> </div>
+            </section>
+            <section id = "service"> 
+                <hr class = "dailyHr"> </hr>
+                <h4> <b> שירותים הניתנים באירוח </b> </h4>
+                <p class = "sleepIcons"> <img src = "images/bath1icon.png"> <br> מקלחת </p> 
+                <p class = "sleepIcons"> <img src = "images/badicon.png"> <br> מיטה </p>
+                <p class = "sleepIcons"> <img src = "images/coffeeicon.png"> <br> קפה </p>
+                <div class = "clear"> </div>
+            </section>
+        </main>
+        <footer> 
+            <div class="g-signin2 hidden" id = "signInRoute" data-onsuccess="onSignIn"></div>
+            <a href ="#" class="btn btn-default" id = "signOut" onclick="signOut();">התנתק</a>
+            <div class = "clear"> </div>
+        </footer>
+        <script src="js/lib/angular/angular.min.js"></script>
+        <script src="js/daily.js"></script>
+        <script> 
+            function signOut() {
+                var auth2 = gapi.auth2.getAuthInstance();
+                auth2.signOut().then(function () {
+                    console.log('User signed out.');
+                });
+                window.location.assign("http://shenkar.html5-book.co.il/2015-2016/ws1/dev_174/index.html");
+            }
+        </script>
+    </body>
+ </html>

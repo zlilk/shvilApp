@@ -1,0 +1,17 @@
+{
+  "name": "shvil",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "angular-route": "^1.5.5",
+    "angular-sanitize": "^1.5.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "zlil & nitsan",
+  "license": "ISC"
+}

@@ -1,0 +1,293 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+nav, main, section {
+    display: block;
+}
+
+body {
+    font-family: 'Alef', sans-serif;
+}
+
+@media (max-width: 450px) {
+    
+    main {
+        direction: rtl;
+    }
+
+    nav {
+        width: 100%;
+        position: fixed;
+        top: 0px;
+        text-align: center;
+        border-bottom: 1px solid #73d2c9;
+        padding-top: 2%;
+        height: 55px; 
+        background-color: #ffffff;
+    }
+
+    nav a {
+        display: block;
+        float: right;
+        margin-right: 18%;
+        width: 40px;
+        height: 45px;
+    }
+
+    #dailyRoute {
+        background: url('../images/dailyicon.png') center;
+    }
+
+    #weeklyRoute {
+        background: url('../images/weeklyicon.png') center;    
+    }
+
+    #weeklyRouteChosen {
+        background: url('../images/weeklyiconchosen.png') center;    
+    }
+
+    #dailyRouteChosen {
+        background: url('../images/dailyiconchosen.png') center;
+    }
+
+    #userPic {
+        border-radius: 150px;
+        border: 2px solid #73d2c9;
+        width: 40px;
+        height: 40px;
+    }
+
+    #userPicChosen {
+        border-radius: 150px;
+        border: 2px solid #23A8AC;
+        width: 40px;
+        height: 40px;
+    }
+    
+    form {
+        width: 60%;
+        margin: 30px auto;
+    }
+
+    #indexBody {
+        background-color: #73d2c9;
+    }
+
+    #calcBtn {
+        text-align: center;
+    }
+
+    #headLine {
+        background-color: #73d2c9;
+        padding: 4%;
+        color: #ffffff;
+    }
+
+    #signOut {
+        display:block; 
+        float:right;
+    }
+
+    #signInRoute {
+        float: right;
+    }
+
+    #signInIndex {
+        text-align: center;
+        width: 28%;
+        margin: 100px auto;
+    }
+
+    #indexWrap {
+        margin-top: 30%;
+    }
+
+    #indexHead{
+        font-size: 60px;
+        color: #ffffff;
+    }
+
+    .underlined {
+        text-decoration: underline;
+        text-decoration-color:  #73d2c9;
+        color: #73d2c9;
+    }
+
+    h1, h4 {
+        text-align: center;
+    }
+
+    #date {
+        color: #ffffff;
+        float: right;
+        width: 18%;
+        background: #73d2c9;
+        margin-left: 5%;
+        text-align: center;
+    }
+
+    #pDate{
+        font-size: 22px;
+        padding-top: 25%;
+    }
+
+    #pDay {
+        font-size: 12px; 
+        padding-bottom: 35%;  
+    }
+
+    .pSleep {
+        height: 50px;
+        margin-bottom: -22px;
+        margin-right: 1.5%;
+        display: inline-block;
+    }
+
+    #route {
+        float: right;
+        width: 75%;
+        font-size: 1em;
+    }
+
+    #pRoute {
+        display: inline-block;
+        height: 10%;
+        padding-top: 5%;
+    }
+
+    #route p:last-child {
+       border-bottom: 0px solid #73d2c9;  
+    }
+
+    .head {
+        font-size: 55px;
+        background-color: #73d2c9;
+        padding: 10%;
+        color: #ffffff;
+        margin-top: 10%;
+    }
+
+    #hDay {
+        font-size: 55px;
+    }
+
+    #hDate {
+    }
+
+    #dayHeadline {
+        background: #73d2c9;
+        text-align: center;
+        color: #ffffff;
+        padding: 2%;
+        margin-top: 10%;
+    }
+
+    #routeInfo {
+       text-align: center; 
+       margin-top: 5%;
+       font-size: 20px;
+    }
+
+    #src {
+       float: right;
+       margin-right: 10%; 
+    }
+
+    #dest {
+        float: left;
+        margin-left: 10%;
+    }
+    
+    #totalKm {
+        margin: 25px auto;
+        border-top: 1px solid #73d2c9;
+        width: 40%;
+        padding-top: 1% ;
+    }
+
+
+    hr {
+        height: 1px;
+        background: #73d2c9;
+        margin: 15px;
+    }
+
+    .dailyHr{
+        margin: 20px 0px 20px 0px;  
+    }
+    
+    #sleep, #service {
+        text-align: center;
+    }
+
+    .sleepIcons {
+        float: right;
+        margin-right: 10%;
+        width: 20%;
+        font-size: 20px;
+    }
+
+    #routeWrap{
+        width: 90%;
+        margin-right: 7%;  
+    }
+
+    #sleepSelect {
+        font-family: 'Alef', sans-serif;
+        width: 70%;
+        float: right;
+    }
+
+    #selectBtn {
+        font-family: 'Alef', sans-serif;
+        float: right;
+    }
+
+    #userData{
+        text-align: center;
+        margin-top: 20%;
+        border-bottom: 1px solid #73d2c9;
+    }
+
+    .roundedIcon {
+        border-radius: 150px;
+        padding: 7%;
+        border: 2px solid #23A8AC; 
+    }
+
+    #userRoute{
+        font-size: 17px;
+        padding-right:12%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        border-bottom: 1px solid #73d2c9;
+    }
+
+    #image {
+        border-radius: 150px;
+        padding: 1%;
+        border: 1px solid #73d2c9;
+    }
+
+    #msg {
+        text-align: center;
+    }
+    
+    footer {
+        padding: 2%;
+        background: #73d2c9;
+        bottom: 0px;
+        width: 100%;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .clear {
+        clear: both;
+    }
+}
+

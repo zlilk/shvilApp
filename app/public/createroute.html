@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="routeForm">
+  <head>
+    <meta charset="utf-8">
+    <meta name="google-signin-client_id" content="296256466166-pdh58rh53nihcc5tfh184vmautajqsup.apps.googleusercontent.com">
+    <title>create route form</title>
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+     <main>
+        <section id = "headLine">
+          <div class="g-signin2 hidden" id = "signInRoute" data-onsuccess="onSignIn"></div>
+          <a href ="#" class="btn btn-default" id = "signOut" onclick="signOut();">התנתק</a>
+          <div class = "clear"> </div>
+          <h1> צור את המסלול שלך </h1>
+        </section>
+        <form id = "routeForm" ng-controller="routecontroller">
+          <div class="form-group">
+            <label for="inputFirstDate"> תאריך התחלה: </label>
+            <input type="date" class="form-control" name="sDate" ng-model="sDate">
+          </div>
+          <div class="form-group">
+            <label for="inputSecondDate">תאריך סיום: </label>
+            <input type="date" class="form-control" name="eDate" ng-model="eDate">
+          </div>
+          <div class="form-group">
+            <label for="inputDir"> כיוון: </label>
+            <select name="dir" id ="dir" class="form-control" ng-model="dir">
+                <option value="north">מצפון לדרום</option>
+                <option value="south">מדרום לצפון</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputPoint"> נקודת התחלה: </label>
+            <select name="sPoint" id="sPoint" class="form-control" ng-model="sPoint">
+              <option ng-repeat="item in list.listPlace" value="{{item.place}}" id="{{item.id}}">{{item.place}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputKmDay">מספר ק"מ ביום: </label>
+            <select name="diff" class="form-control" ng-model="diff">
+                <option value="5">קל - 5 ק"מ ביום</option>
+                <option value="10">בינוני - 10 ק"מ ביום</option>
+                <option value="15">קשה - 15 ק"מ ביום</option>
+            </select>
+          </div>
+          <br>
+          <div id ="calcBtn">
+            <button type="submit" class="btn btn-default" ng-click="sendDetails()">חשב</button> 
+          </div>
+        </form>
+    </main>
+    <script src="js/lib/angular/angular.min.js"></script>
+    <script src="js/routedetails.js"></script>
+    <script src="js/listFunction.js"></script>
+    <script> 
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+        window.location.assign("http://shenkar.html5-book.co.il/2015-2016/ws1/dev_174/index.html");
+      }
+    </script>
+  </body>
+ </html>

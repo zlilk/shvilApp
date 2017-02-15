@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="route">
+  <head>
+    <meta charset="utf-8">
+    <meta name="google-signin-client_id" content="296256466166-pdh58rh53nihcc5tfh184vmautajqsup.apps.googleusercontent.com">
+    <title>weekly route</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body ng-controller="segmentscontroller">
+    <nav> 
+        <a id = "personalData" href="userdata.html" > <img id = "userPic" src="{{pic}}"> </a>
+        <a id = "dailyRoute" href="dailyroute.html"> </a>
+        <a id = "weeklyRouteChosen" href="route.html"> </a> 
+        <div class = "clear"> </div>
+    </nav>
+  <main id = "routeMain">
+    <h1 class = "head"> תכנון שבועי </h1>
+    <section id = "routeWrap">
+      <div id = "date">
+        <p id = "pDate" ng-repeat-start ="date in datesArr.dates"> {{date.day}} 
+          <p id = "pDay" ng-repeat-end ="date in datesArr.dates">  {{date.string}} </p>
+        </p> 
+      </div>
+      <div id = "route"> </div>
+      <div class = "clear"> </div>
+    </section>
+  </main>
+  <footer> 
+    <div class="g-signin2 hidden" id = "signInRoute" data-onsuccess="onSignIn"></div>
+    <a href ="#" class="btn btn-default" id = "signOut" onclick="signOut();">התנתק</a>
+    <div class = "clear"> </div>
+  </footer>
+    <script src="js/lib/angular/angular.min.js"></script>
+    <script src="js/getroutedetails.js"></script>   
+    <script> 
+      function signOut(){
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+          console.log('User signed out.');
+        });
+        window.location.assign("http://shenkar.html5-book.co.il/2015-2016/ws1/dev_174/index.html");
+      }
+    </script>
+  </body>
+</html>
